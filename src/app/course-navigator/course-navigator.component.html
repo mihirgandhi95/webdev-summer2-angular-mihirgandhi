@@ -1,0 +1,90 @@
+<div class="container-fluid">
+  <h1>Navigator</h1>
+  <div class="row">
+    <div class="col-2">
+
+
+      <li class="list-group-item active">
+        Courses</li>
+
+      <li (click)="selectCourse(course.id)"
+          class="list-group-item webdev"
+          [ngClass]="{'active': course.id
+=== selectedCourseId}"
+          *ngFor="let course of courses">
+        {{course.title}}
+      </li>
+
+
+
+    </div>
+    <div class="col-2">
+
+      <ul class="list-group">
+        <li class="list-group-item active">
+          Modules </li>
+        <li (click)="selectModule(module.id)"
+            class="list-group-item webdev"
+            [ngClass]="{'active': module.id
+=== selectedModuleId}"
+            *ngFor="let module of modules">
+          {{module.title}}
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-2">
+
+
+      <ul class="list-group">
+        <li class="list-group-item active">
+          Lessons
+        </li>
+        <li (click)="selectLesson(lesson.id)"
+            [ngClass]="{'active': lesson.id === selectedLessonId}"
+            class="list-group-item webdev"
+            *ngFor="let lesson of lessons">
+          {{lesson.title}}
+        </li>
+      </ul>
+
+
+    </div>
+
+    <div class="col-2">
+
+
+      <ul class="list-group">
+        <li class="list-group-item active">
+          Topics
+        </li>
+        <li (click)="selectTopic(topic.id)"
+            [ngClass]="{'active': topic.id === selectedTopicId}"
+            class="list-group-item webdev"
+            *ngFor="let topic of topics">
+          {{topic.title}}
+        </li>
+      </ul>
+
+
+    </div>
+    <div class="col-2">
+
+
+      <ul class="list-group">
+        <li class="list-group-item active">
+          Widgets
+        </li>
+        <li (click)="selectWidget(widget.id)"
+            [ngClass]="{'active': widget.id === selectedWidgetId}"
+            class="list-group-item webdev"
+            *ngFor="let widget of widgets">
+          {{widget.id}}
+        </li>
+      </ul>
+
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,15 @@
+<!--<ul class="nav nav-tabs">-->
+  <div *ngFor="let widget of widgets">
+    <hr color="red"/>
+    <p> The widget id is: <strong>{{widget.id}} </strong></p>
+    <p>The widget name is: <strong> {{widget.name}} </strong></p>
+    <p> The widget text is:<strong>{{widget.text}} </strong></p>
+    <br/>
+  
+   <!-- <a class="nav-link"
+       [ngClass] = "{'active': widget.id == widgetId }"
+       routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lessonId}}/topic/{{topicId}}/widget/{{widget.id}}">
+      {{widget.title}}
+    </a>-->
+  </div>
+<!--</ul>-->
