@@ -44,7 +44,7 @@ export class UserServiceClient {
   createUser(username, password) {
     const user = {
       username: username,
-      password: password
+      password: password,
     };
     return fetch('http://localhost:4000/api/user', {
       body: JSON.stringify(user),
@@ -54,6 +54,17 @@ export class UserServiceClient {
         'content-type': 'application/json'
       }
     });
+  }
+
+  updateUser(user) {
+    return fetch('http://localhost:4000/api/update', {
+      body: JSON.stringify(user),
+      method: 'put',
+      credentials: 'include',
+      headers: {
+        'content-type': 'application/json'
+      }
+    }).then(response => response.json());
   }
 
 
