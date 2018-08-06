@@ -11,14 +11,44 @@
 
 
 <div class="container-fluid">
-  <h1>
-    White Board
-  </h1>
 
-  <a routerLink="/login">Login </a>
-  <a routerLink="/register">Register </a>
+
+
+
+  <div *ngIf="isAdmin">
+    Admin Page
+  </div>
+
+  <div *ngIf="!isAdmin">
+    <h1>
+      White Board
+    </h1>
+  </div>
+
+  <div *ngIf="isLoggedIn">
+    <a (click)="logout()" routerLink="/logout">Logout </a>
+  </div>
+
+
+  <div *ngIf="!isLoggedIn">
+    <a routerLink="/login">Login </a> |
+    <a routerLink="/register">Register </a>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!--<a routerLink="/login">Login </a>-->
+  <!--<a routerLink="/register">Register </a>-->
 
   <!--<a routerLink="/quizzes">Quizzes </a>-->
 
   <app-course-grid></app-course-grid>
+
+
 </div>

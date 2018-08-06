@@ -27,6 +27,7 @@ export class ProfileComponent implements OnInit {
   email;
   password;
   sections = [];
+  isAdmin = false;
 
   userNew = new User();
 
@@ -54,6 +55,12 @@ export class ProfileComponent implements OnInit {
         this.password = userNew.password;
         this.username = userNew.username;
         this.userNew = userNew;
+
+        if (userNew.username === 'admin') {
+          this.isAdmin = true;
+        } else {
+          console.log('Not the admin profile');
+        }
         }
         );
 

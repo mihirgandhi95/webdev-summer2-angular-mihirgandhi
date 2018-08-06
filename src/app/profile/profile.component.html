@@ -27,6 +27,8 @@
 
   <h2>Sections ({{sections.length}})</h2>
 
+
+  <div *ngIf="!isAdmin">
   <ul class="list-group">
     <li *ngFor="let enrollment of sections" class="list-group-item">
       {{enrollment.section.name}}
@@ -34,7 +36,18 @@
     </li>
   </ul>
 
-  <button (click)="logout()">Logout </button>
-  <a routerLink="/home"> Home </a>
+  </div>
+
+  <div *ngIf="!isAdmin" id="homeLink1">
+  <a routerLink="/home"> Home - CourseView </a>
+  </div>
+
+
+  <div *ngIf="isAdmin" id="homeLink2">
+    <a routerLink="/home"> Admin Page </a>
+  </div>
+
+  <button class = "btn btn-danger float-right"(click)="logout()">Logout </button>
+
 
 </div>
