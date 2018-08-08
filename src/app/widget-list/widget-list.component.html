@@ -1,22 +1,49 @@
-<!--<ul class="nav nav-tabs">-->
-  <div *ngFor="let widget of widgets">
-    <hr color="red"/>
-    <p> The widget id is: <strong>{{widget.id}} </strong></p>
-    <p>The widget name is: <strong> {{widget.name}} </strong></p>
-    <p> The widget text is:<strong>{{widget.text}} </strong></p>
-    <br/>
+<!--&lt;!&ndash;<ul class="nav nav-tabs">-->
+  <!--<div *ngFor="let widget of widgets">-->
+    <!--<hr color="red"/>-->
+    <!--<p> The widget id is: <strong>{{widget.id}} </strong></p>-->
+    <!--<p>The widget name is: <strong> {{widget.name}} </strong></p>-->
+    <!--<p> The widget text is:<strong>{{widget.text}} </strong></p>-->
+    <!--<br/>-->
 
-   <!-- <a class="nav-link"
-       [ngClass] = "{'active': widget.id == widgetId }"
-       routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lessonId}}/topic/{{topicId}}/widget/{{widget.id}}">
-      {{widget.title}}
-    </a>-->
+    <!--<a class="nav-link"-->
+       <!--[ngClass] = "{'active': widget.id == widgetId }"-->
+       <!--routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lessonId}}/topic/{{topicId}}/widget/{{widget.id}}">-->
+      <!--{{widget.title}}-->
+    <!--</a>-->
+  <!--</div>-->
+<!--</ul>&ndash;&gt;-->
+
+
+<div *ngFor="let widget of widgets">
+  <div [ngSwitch]="widget.widgetType">
+    <div *ngSwitchCase = "'Heading'">
+      <div [ngSwitch] = "widget.size">
+        <h3 class="shadow-lg p-3 mb-5 bg-white rounded">Heading Widget</h3>
+        <h1 class="shadow-lg p-3 mb-5 bg-white rounded" *ngSwitchCase="'1'">Widget Text is: {{widget.text}}</h1>
+        <h2 class="shadow-lg p-3 mb-5 bg-white rounded" *ngSwitchCase="'2'">Widget Text is: {{widget.text}}</h2>
+        <h3 class="shadow-lg p-3 mb-5 bg-white rounded" *ngSwitchCase="'3'">Widget Text is: {{widget.text}}</h3>
+        <h4 class="shadow-lg p-3 mb-5 bg-white rounded" *ngSwitchCase="'4'">Widget Text is: {{widget.text}}</h4>
+        <h5 class="shadow-lg p-3 mb-5 bg-white rounded" *ngSwitchCase="'5'">Widget Text is: {{widget.text}}</h5>
+        <h6 class="shadow-lg p-3 mb-5 bg-white rounded" *ngSwitchCase="'6'">Widget Text is: {{widget.text}}</h6>
+      </div>
+    </div>
+    <div *ngSwitchCase="'Image'">
+      <img height="400px" width="400px" src="{{widget.src}}">
+      <p>Widget Text is: {{widget.text}} </p>
+    </div>
+    <div *ngSwitchCase="'List'">
+      <h1>ListWidget</h1>
+      <ul class="list-group">
+        <li class="list-group-item"
+            *ngFor="let item of widget.items.split('|')">
+          {{item}}
+        </li>
+      </ul>
+    </div>
+
   </div>
-<!--</ul>-->
-
-
-
-
+</div>
 
 
 <!--

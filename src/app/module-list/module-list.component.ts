@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ModuleServiceClient} from "../services/module.service.client";
+import {UserServiceClient} from "../services/user.service.client";
 
 @Component({
   selector: 'app-module-list',
@@ -10,6 +11,7 @@ import {ModuleServiceClient} from "../services/module.service.client";
 export class ModuleListComponent implements OnInit {
 
   constructor(private service: ModuleServiceClient,
+              private userService: UserServiceClient,
               private route: ActivatedRoute) {
     this.route.params.subscribe(params => this.setParams(params));
   }
@@ -19,10 +21,12 @@ export class ModuleListComponent implements OnInit {
   modules = [];
 
 
+
+
   setParams(params){
     this.courseId = params['courseId'];
     this.moduleId = params['moduleId'];
-    this.loadModules(this.courseId)
+    this.loadModules(this.courseId);
   }
 
 

@@ -1,0 +1,15 @@
+<div class = "container-fluid">
+  <h1>Update Section</h1>
+
+  <div>
+    <input [(ngModel)]="section.name"
+           placeholder="Section Name"
+           class="form-control">
+    <input [(ngModel)]="section.seats"
+           placeholder="Seats available"
+           class="form-control">
+    <button (click)="updateSection(section)" class="btn btn-success btn-block">
+      Update Section
+    </button>
+  </div>
+</div>

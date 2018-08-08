@@ -31,23 +31,33 @@
   <div *ngIf="!isAdmin">
   <ul class="list-group">
     <li *ngFor="let enrollment of sections" class="list-group-item">
-      {{enrollment.section.name}}
-      ({{enrollment.section.seats}})
+     <p> Section Name: {{enrollment.name}}
+       <br/>
+     Section Seats Left: {{enrollment.seats}}
+     <br/>
+       <button (click)="unenrollUser(enrollment,userNew)" class = "float-right btn btn-danger">Unenroll</button>
+     <!--Course Id: {{course._id}}</p>-->
     </li>
   </ul>
-
   </div>
 
   <div *ngIf="!isAdmin" id="homeLink1">
-  <a routerLink="/home"> Home - CourseView </a>
+    <br/>
+  <button class="btn btn-primary" routerLink="/home"> Home - CourseView </button>
+    <button class = "btn btn-danger float-right"(click)="logout()">Logout </button>
+
   </div>
 
 
   <div *ngIf="isAdmin" id="homeLink2">
-    <a routerLink="/home"> Admin Page </a>
+    <br/>
+    <button class="btn btn-primary" routerLink="/home"> Admin Page </button>
+    <button class = "btn btn-danger float-right"(click)="logout()">Logout </button>
+
   </div>
 
-  <button class = "btn btn-danger float-right"(click)="logout()">Logout </button>
+
+
 
 
 </div>

@@ -26,7 +26,7 @@ export class WidgetListComponent implements OnInit {
   widgets = [];
 
 
-  setParams(params){
+  setParams(params) {
     this.courseId = params['courseId'];
     this.moduleId = params['moduleId'];
     this.lessonId = params['lessonId'];

@@ -3,8 +3,7 @@ import {User} from '../models/user.model.client';
 import {UserServiceClient} from '../services/user.service.client';
 import {Router} from '@angular/router';
 import {SectionServiceClient} from '../services/section.service.client';
-
-
+import {Section} from '../models/section.model.client';
 
 
 
@@ -26,9 +25,12 @@ export class ProfileComponent implements OnInit {
   lastName;
   email;
   password;
-  sections = [];
+  user = new User();
+  // section = new Section();
+  sections: Section[] = [];
   isAdmin = false;
-
+  courseId;
+  userId;
   userNew = new User();
 
   update(userNew) {
@@ -45,6 +47,13 @@ export class ProfileComponent implements OnInit {
 
   }
 
+
+  unenrollUser(section, userNew) {
+    console.log(userNew._id);
+    console.log(section._id);
+    this.sectionService.unenrollStudentinSection(section, userNew).then(() => window.location.reload());
+  }
+
   ngOnInit() {
     this.service
       .profile()
@@ -55,6 +64,7 @@ export class ProfileComponent implements OnInit {
         this.password = userNew.password;
         this.username = userNew.username;
         this.userNew = userNew;
+        // this.userId = userNew._id;
 
         if (userNew.username === 'admin') {
           this.isAdmin = true;
@@ -67,7 +77,32 @@ export class ProfileComponent implements OnInit {
     // this.username = user.username;
     this.sectionService
       .findSectionsForStudent()
-      .then(sections => this.sections = sections );
+      .then(sections => {
+        for (const section of sections) {
+          console.log("Section is:" + section);
+          console.log("section.section is:" + section.section);
+          if (section.section == null) {
+            console.log('one empty console message for the section with null value');
+            //alert('no section enrollment for this element');
+          } else {
+            this.sections.push(section.section);
+          }
+
+    }
+        // this.sections = sections);
+
+  });
+    // for (const student of students) {
+    //   if (student.student.firstName != null) {
+    //     console.log(" first name is not null... ");
+    //   }
+    //   console.log(student.student.firstName);
+    //   this.students.push(student.student);
+    //
+    //
+
+
+
   }
 
 }

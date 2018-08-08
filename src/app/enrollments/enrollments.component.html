@@ -1,0 +1,20 @@
+<div class= "container-fluid">
+
+<h1> Enrollments Section </h1>
+<div id = "enrollments">
+
+  <p>Sect6ion iud - {{sectionId}}</p>
+  <!--<p [(ngModel)]="firstName" class = "form-control">-->
+  <ul class="list-group">
+    First Name &nbsp; Last Name &nbsp; Grades
+    <li *ngFor="let student of students" class="list-group-item">
+      {{student.firstName}}
+      &nbsp;
+      {{student.lastName}}
+      &nbsp;
+      A+
+    </li>
+  </ul>
+
+</div>
+</div>
