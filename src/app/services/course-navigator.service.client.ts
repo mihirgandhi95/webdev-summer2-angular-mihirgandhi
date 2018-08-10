@@ -6,7 +6,7 @@ export class CourseNavigatorServiceClient {
 
   findAllCourses() {
     return fetch
-    (' https://cs5610-summer2-2018-mihirg.herokuapp.com/api/course')
+    (' http://localhost:8080/api/course')
       .then(response => response.json());
   }
 
@@ -14,7 +14,7 @@ export class CourseNavigatorServiceClient {
 
   findModulesForCourse(courseId) {
     return fetch
-    (' https://cs5610-summer2-2018-mihirg.herokuapp.com/api/course/'
+    (' http://localhost:8080/api/course/'
       + courseId + '/module')
       .then(response => response.json());
   }
@@ -22,7 +22,7 @@ export class CourseNavigatorServiceClient {
 
   findLessonsForModule(moduleId) {
     return fetch
-    (' https://cs5610-summer2-2018-mihirg.herokuapp.com/api/module/'
+    (' http://localhost:8080/api/module/'
       + moduleId + '/lesson')
       .then(response => response.json());
   }
@@ -30,14 +30,14 @@ export class CourseNavigatorServiceClient {
 
   findTopicsForLesson(lessonId) {
     return fetch
-    ('https://cs5610-summer2-2018-mihirg.herokuapp.com/api/lesson/'
+    ('http://localhost:8080/api/lesson/'
       + lessonId + '/topic')
       .then(response => response.json());
   }
 
   findWidgetsForTopic(topicId) {
     return fetch
-    (' https://cs5610-summer2-2018-mihirg.herokuapp.com/api/topic/'
+    (' http://localhost:8080/api/topic/'
       + topicId + '/widget')
       .then(response => response.json());
   }

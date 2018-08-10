@@ -5,13 +5,15 @@ export class UserServiceClient {
 
 
   findUserById(userId) {
-    return fetch('https://backendassignment5.herokuapp.com/api/user/' + userId)
+    // return fetch('https://backendassignment5.herokuapp.com/api/user/' + userId)
+    return fetch('http://localhost:4000/api/user/' + userId)
       .then(response => response.json());
   }
 
 
   findUsers() {
-    return fetch('https://backendassignment5.herokuapp.com/api/user').then(response => response.json());
+    return fetch('http://localhost:4000/api/user').then(response => response.json());
+    // return fetch('https://backendassignment5.herokuapp.com/api/user').then(response => response.json());
   }
 
 
@@ -20,7 +22,8 @@ export class UserServiceClient {
       username: username,
       password: password
     };
-    return fetch('https://backendassignment5.herokuapp.com/api/login', {
+    // return fetch('https://backendassignment5.herokuapp.com/api/login', {
+    return fetch('http://localhost:4000/api/login', {
       method: 'post',
       body: JSON.stringify(credentials),
       credentials: 'include',
@@ -31,14 +34,16 @@ export class UserServiceClient {
   }
 
   logout() {
-    return fetch('https://backendassignment5.herokuapp.com/api/logout', {
+    // return fetch('https://backendassignment5.herokuapp.com/api/logout', {
+    return fetch('http://localhost:4000/api/logout', {
       method: 'post',
       credentials: 'include'
     });
   }
 
   profile() {
-    return fetch('https://backendassignment5.herokuapp.com/api/profile',
+    // return fetch('https://backendassignment5.herokuapp.com/api/profile',
+    return fetch('http://localhost:4000/api/profile',
       {
         credentials: 'include', // include, same-origin, *omit
       })
@@ -50,7 +55,8 @@ export class UserServiceClient {
       username: username,
       password: password,
     };
-    return fetch('https://backendassignment5.herokuapp.com/api/user', {
+    // return fetch('https://backendassignment5.herokuapp.com/api/user', {
+    return fetch('http://localhost:4000/api/user', {
       body: JSON.stringify(user),
       credentials: 'include', // include, same-origin, *omit
       method: 'post',
@@ -61,7 +67,8 @@ export class UserServiceClient {
   }
 
   updateUser(user) {
-    return fetch('https://backendassignment5.herokuapp.com/api/update', {
+    // return fetch('https://backendassignment5.herokuapp.com/api/update', {
+    return fetch('http://localhost:4000/api/update', {
       body: JSON.stringify(user),
       method: 'put',
       credentials: 'include',
