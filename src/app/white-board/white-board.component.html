@@ -22,10 +22,26 @@
     </h1>
   </div>
 
+  <div *ngIf="!isAdmin">
+    <div *ngIf="isLoggedIn">
+      <br/>
+      <button class="btn btn-primary btn-block" routerLink="/quizzes">Quizzes</button>
+    </div>
+  </div>
+  <div *ngIf="isAdmin">
+    <div *ngIf="isLoggedIn">
+      <br/>
+      <button class="btn btn-primary btn-block" routerLink="/quizzes">Quizzes</button>
+    </div>
+  </div>
+
+
+  <br/>
+
+
   <div *ngIf="isLoggedIn">
     <button class="btn btn-danger float-right" (click)="logout()" routerLink="/logout">Logout </button>
   </div>
-
 
   <div *ngIf="!isLoggedIn">
     <button class="btn btn-primary" routerLink="/login">Login </button> |

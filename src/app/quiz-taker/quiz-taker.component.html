@@ -1,0 +1,54 @@
+<h2>Quiz Taker</h2>
+
+<h3>
+  {{quiz.title}}
+  <br/>
+  <button class="btn btn-primary float-right"
+          (click)="submitQuiz(quiz)">
+    Submit
+  </button>
+  <h2>
+    <button class="btn btn-primary float-right" routerLink="/home">Home </button>
+  </h2>
+
+
+</h3>
+<br/>
+<br/>
+
+
+
+
+<ul class="list-group">
+  <li *ngFor="let question of quiz.questions" class="list-group-item">
+    <h4>
+      {{question.title}}
+      <span class="float-right">{{question.points}}</span>
+    </h4>
+    <p>{{question.description}}</p>
+    <p>{{question.questionType}}</p>
+   <div [ngSwitch]="question.questionType">
+
+      <app-true-false-question
+        [question]="question"
+        *ngSwitchCase="'TRUE_FALSE'">
+      </app-true-false-question>
+
+      <app-fill-blanks-question
+        [question]="question"
+        *ngSwitchCase="'FILL_BLANKS'">
+      </app-fill-blanks-question>
+
+      <app-multiple-choice-question
+        [question]="question"
+        *ngSwitchCase="'CHOICE'">
+      </app-multiple-choice-question>
+
+      <app-essay-question
+        [question]="question"
+        *ngSwitchCase="'ESSAY'">
+      </app-essay-question>
+
+    </div>
+  </li>
+</ul>

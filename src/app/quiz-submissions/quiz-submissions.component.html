@@ -1,0 +1,145 @@
+<div class = "container-fluid">
+  <h2>Submissions</h2>
+  <h2>
+    <button class="btn btn-primary float-right" routerLink="/home">Home </button>
+  </h2>
+  <br/>
+  <br/>
+  <br/>
+
+<div>
+  <input type="text" placeholder="Search.." class="form-control"  [(ngModel)]="keyWord" (ngModelChange)="search(keyWord)">
+  <!--<button class="btn btn-primary" (click)="search(keyWord)">Search</button>-->
+</div>
+  <br/>
+
+
+  <ul>
+
+
+    <li *ngFor="let objstar of arrayOfObjects">
+
+      Username of the person who submitted the quiz is {{objstar.usernameM}}
+      <br/>
+
+      Time when the quiz was submitted is {{objstar.timeM}}
+
+      <p>Submission</p>
+      <div *ngFor="let ansfinal of objstar.answerM" class="list-group-item">
+        <p>Question Id is: {{ansfinal._id}}</p>
+        <p *ngIf="ansfinal.essayAnswer != null"> Essay Answer is:      {{ansfinal.essayAnswer}} </p>
+        <p *ngIf="ansfinal.multipleChoiceAnswer != null"> MultipleChoiceAnswer is: {{ansfinal.multipleChoiceAnswer}} </p>
+        <p *ngIf="ansfinal.trueFalseAnswer != null"> True False Answer is: {{ansfinal.trueFalseAnswer}} </p>
+        <p *ngIf="ansfinal.fillBlanksAnswers != null"> Fill Blanks Answer for Variable 1 is: {{ansfinal.fillBlanksAnswers.variable1}}
+          <br/>
+          Fill Blanks Answer for Variable 2 is: {{ansfinal.fillBlanksAnswers.variable2}}
+
+        </p>
+      </div>
+
+    </li>
+
+
+
+
+  </ul>
+
+
+
+
+
+<!--
+  <ul class="list-group">
+
+
+
+        <li *ngFor="let userNew of combinedObject.usernamesNew">
+          Username of the person who submitted the quiz is {{userNew}}
+        </li>
+
+        <li *ngFor="let ans of combinedObject.answersNew" class="list-group-item">
+          <ol>
+            <p>Submission</p>
+            <li *ngFor="let ansfinal of ans" class="list-group-item">
+              <p>Question Id is: {{ansfinal._id}}</p>
+              <p *ngIf="ansfinal.essayAnswer != null"> Essay Answer is:      {{ansfinal.essayAnswer}} </p>
+              <p *ngIf="ansfinal.multipleChoiceAnswer != null"> MultipleChoiceAnswer is: {{ansfinal.multipleChoiceAnswer}} </p>
+              <p *ngIf="ansfinal.trueFalseAnswer != null"> True False Answer is: {{ansfinal.trueFalseAnswer}} </p>
+              <p *ngIf="ansfinal.fillBlanksAnswers != null"> Fill Blanks Answer for Variable 1 is: {{ansfinal.fillBlanksAnswers.variable1}}
+                <br/>
+                Fill Blanks Answer for Variable 2 is: {{ansfinal.fillBlanksAnswers.variable2}}
+
+              </p>
+            </li>
+          </ol>
+        </li>
+
+
+
+
+  </ul>
+-->
+
+
+
+
+<!--
+  <ul class = "list-group">
+
+    <li *ngFor="let userNew of combinedObject.usernamesNew">
+      <ol>
+        Username of the person who submitted the quiz is {{userNew}}
+      </ol>
+    </li>
+
+    <li *ngFor="let ans of combinedObject.answersNew" class="list-group-item">
+      <ol>
+        <p>Submission</p>
+        <li *ngFor="let ansfinal of ans" class="list-group-item">
+          <p>Question Id is: {{ansfinal._id}}</p>
+          <p *ngIf="ansfinal.essayAnswer != null"> Essay Answer is:      {{ansfinal.essayAnswer}} </p>
+          <p *ngIf="ansfinal.multipleChoiceAnswer != null"> MultipleChoiceAnswer is: {{ansfinal.multipleChoiceAnswer}} </p>
+          <p *ngIf="ansfinal.trueFalseAnswer != null"> True False Answer is: {{ansfinal.trueFalseAnswer}} </p>
+          <p *ngIf="ansfinal.fillBlanksAnswers != null"> Fill Blanks Answer for Variable 1 is: {{ansfinal.fillBlanksAnswers.variable1}}
+            <br/>
+            Fill Blanks Answer for Variable 2 is: {{ansfinal.fillBlanksAnswers.variable2}}
+
+          </p>
+        </li>
+      </ol>
+    </li>
+
+
+  </ul>
+-->
+
+
+
+<!--  <ul class = "list-group">
+    <li *ngFor="let ans of answers" class="list-group-item">
+     <ol>
+       <p>Submission</p>
+       <li *ngFor="let ansfinal of ans" class="list-group-item">
+         <p>Question Id is: {{ansfinal._id}}</p>
+         <p *ngIf="ansfinal.essayAnswer != null"> Essay Answer is:      {{ansfinal.essayAnswer}} </p>
+         <p *ngIf="ansfinal.multipleChoiceAnswer != null"> MultipleChoiceAnswer is: {{ansfinal.multipleChoiceAnswer}} </p>
+         <p *ngIf="ansfinal.trueFalseAnswer != null"> True False Answer is: {{ansfinal.trueFalseAnswer}} </p>
+         <p *ngIf="ansfinal.fillBlanksAnswers != null"> Fill Blanks Answer for Variable 1 is: {{ansfinal.fillBlanksAnswers.variable1}}
+           <br/>
+           Fill Blanks Answer for Variable 2 is: {{ansfinal.fillBlanksAnswers.variable2}}
+
+         </p>
+       </li>
+     </ol>
+    </li>
+  </ul>-->
+
+
+ <!-- <ul class = "list-group">
+    <li *ngFor="let username of usernames" class="list-group-item">
+      <ol>
+        {{username}}
+      </ol>
+    </li>
+  </ul>-->
+</div>

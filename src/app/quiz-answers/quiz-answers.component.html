@@ -1,0 +1,31 @@
+<h1> Welcome to the Preview for the answers!!</h1>
+
+
+<!--<button (click)="loadSubmission(quizId,submissionId)" class="btn btn-success btn-block">
+  Update Section
+</button>-->
+
+
+<p>Quiz id is: {{submission.quiz}}</p>
+<p>Student id is: {{submission.student}}</p>
+<p>Submission Time is: {{submission.submissionTime}}</p>
+
+<ul>
+
+
+
+    <p>Submission</p>
+    <div *ngFor="let ansfinal of submission.answers" class="list-group-item">
+      <p>Question Id is: {{ansfinal._id}}</p>
+      <p *ngIf="ansfinal.essayAnswer != null"> Essay Answer is:      {{ansfinal.essayAnswer}} </p>
+      <p *ngIf="ansfinal.multipleChoiceAnswer != null"> MultipleChoiceAnswer is: {{ansfinal.multipleChoiceAnswer}} </p>
+      <p *ngIf="ansfinal.trueFalseAnswer != null"> True False Answer is: {{ansfinal.trueFalseAnswer}} </p>
+      <p *ngIf="ansfinal.fillBlanksAnswers != null"> Fill Blanks Answer for Variable 1 is: {{ansfinal.fillBlanksAnswers.variable1}}
+        <br/>
+        Fill Blanks Answer for Variable 2 is: {{ansfinal.fillBlanksAnswers.variable2}}
+
+      </p>
+    </div>
+
+
+</ul>
