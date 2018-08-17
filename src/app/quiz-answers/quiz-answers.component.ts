@@ -39,7 +39,13 @@ export class QuizAnswersComponent implements OnInit {
   essayAnswer = '';
   multipleChoiceAnswer = '';
   fillBlanksAnswers = {};
-   submission = {};
+   submission = {
+     quiz: '',
+     student: '',
+     submissionTime: '',
+     answers: []
+
+   };
   variable1 = '';
   combinedObject = {usernamesNew: this.usernames, answersNew:  this.answers };
   combinedObjectNew = {};

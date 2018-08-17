@@ -33,7 +33,11 @@ export class QuizTakerComponent implements OnInit {
               private activatedRoute: ActivatedRoute) { }
 
   quizId = ''
-  quiz = {submissionTime: new Date()}
+  quiz = {
+    submissionTime: new Date(),
+    questions: {},
+    title: ''
+  }
   submissionId = ''
   submissionNew = {}
 /*  submitQuiz = quiz => {
