@@ -60,7 +60,7 @@ export class QuizServiceClient {
     fetch('https://backendassignment5.herokuapp.com/api/quiz')
       .then(response => response.json())
   findQuizById = quizId =>
-    fetch('http://localhost:4000/api/quiz/' + quizId)
+    fetch('https://backendassignment5.herokuapp.com/api/quiz/' + quizId)
       .then(response => response.json())
   updateQuiz(quizId, quiz) {}
   deleteQuiz(quizId) {}
