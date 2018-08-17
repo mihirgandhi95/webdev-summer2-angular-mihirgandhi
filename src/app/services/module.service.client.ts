@@ -9,6 +9,7 @@ export class ModuleServiceClient{
   findModulesForCourse(courseId){
     return fetch(this.MODULE_URL.replace('COURSE_ID', courseId))
       .then(response => response.json());
+
   }
 
 

@@ -6,6 +6,7 @@ export class CourseServiceClient {
 
   COURSE_URL = 'https://cs5610-summer2-2018-mihirg.herokuapp.com/api/course';
   SECTION_URL = 'https://cs5610-summer2-2018-mihirg.herokuapp.com/api/section/course';
+  
 
 
 

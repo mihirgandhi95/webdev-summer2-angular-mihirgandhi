@@ -52,6 +52,7 @@ export class QuizServiceClient {
     }).then(
     response => response.json()
 );
+
 }
 
   createQuiz(quiz) {}

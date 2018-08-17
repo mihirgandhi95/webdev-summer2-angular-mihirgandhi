@@ -77,6 +77,7 @@ export class SectionServiceClient {
       credentials: 'include',
 
     }).then(response => response.json());
+
   }
 
 

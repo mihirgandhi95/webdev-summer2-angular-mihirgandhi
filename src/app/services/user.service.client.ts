@@ -39,6 +39,7 @@ export class UserServiceClient {
       method: 'post',
       credentials: 'include'
     });
+
   }
 
   profile() {
