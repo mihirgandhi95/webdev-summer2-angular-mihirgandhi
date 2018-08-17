@@ -1,31 +1,36 @@
+<div id="sunset">
 <h1> Welcome to the Preview for the answers!!</h1>
 
 
 <!--<button (click)="loadSubmission(quizId,submissionId)" class="btn btn-success btn-block">
   Update Section
 </button>-->
+<h2>
+  <button class="btn btn-primary float-right" routerLink="/home">Home </button>
+</h2>
 
-
-<p>Quiz id is: {{submission.quiz}}</p>
-<p>Student id is: {{submission.student}}</p>
-<p>Submission Time is: {{submission.submissionTime}}</p>
+<p><strong>Quiz id </strong> is: {{submission.quiz}}</p>
+<p><strong>Student id </strong> is: {{submission.student}}</p>
+<p><strong>Submission Time</strong>  is: {{submission.submissionTime}}</p>
 
 <ul>
 
 
 
-    <p>Submission</p>
+    <h4> You cannot make changes to the submission now. This is what you submitted.</h4>
+    <h3>Submission</h3>
     <div *ngFor="let ansfinal of submission.answers" class="list-group-item">
-      <p>Question Id is: {{ansfinal._id}}</p>
-      <p *ngIf="ansfinal.essayAnswer != null"> Essay Answer is:      {{ansfinal.essayAnswer}} </p>
-      <p *ngIf="ansfinal.multipleChoiceAnswer != null"> MultipleChoiceAnswer is: {{ansfinal.multipleChoiceAnswer}} </p>
-      <p *ngIf="ansfinal.trueFalseAnswer != null"> True False Answer is: {{ansfinal.trueFalseAnswer}} </p>
-      <p *ngIf="ansfinal.fillBlanksAnswers != null"> Fill Blanks Answer for Variable 1 is: {{ansfinal.fillBlanksAnswers.variable1}}
+      <p><strong>Question Id</strong> is: {{ansfinal._id}}</p>
+      <p *ngIf="ansfinal.essayAnswer != null"> <strong>Essay Answer</strong> is:      {{ansfinal.essayAnswer}} </p>
+      <p *ngIf="ansfinal.multipleChoiceAnswer != null"> <strong>MultipleChoiceAnswer</strong> is: {{ansfinal.multipleChoiceAnswer}} </p>
+      <p *ngIf="ansfinal.trueFalseAnswer != null"> <strong>True False Answer</strong> is: {{ansfinal.trueFalseAnswer}} </p>
+      <p *ngIf="ansfinal.fillBlanksAnswers != null"> <strong>Fill Blanks Answer for Variable 1</strong> is: {{ansfinal.fillBlanksAnswers.variable1}}
         <br/>
-        Fill Blanks Answer for Variable 2 is: {{ansfinal.fillBlanksAnswers.variable2}}
+        <strong>Fill Blanks Answer for Variable 2</strong> is: {{ansfinal.fillBlanksAnswers.variable2}}
 
       </p>
     </div>
 
 
 </ul>
+</div>

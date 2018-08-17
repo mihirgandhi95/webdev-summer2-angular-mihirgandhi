@@ -1,5 +1,5 @@
-<div class = "container-fluid">
-  <h2>Submissions</h2>
+<div id="tree" class = "container-fluid">
+  <h2 align="center">Submissions</h2>
   <h2>
     <button class="btn btn-primary float-right" routerLink="/home">Home </button>
   </h2>
@@ -8,6 +8,7 @@
   <br/>
 
 <div>
+  <h6>Filter the submissions by username of the students who submitted the quiz</h6>
   <input type="text" placeholder="Search.." class="form-control"  [(ngModel)]="keyWord" (ngModelChange)="search(keyWord)">
   <!--<button class="btn btn-primary" (click)="search(keyWord)">Search</button>-->
 </div>
@@ -19,23 +20,29 @@
 
     <li *ngFor="let objstar of arrayOfObjects">
 
-      Username of the person who submitted the quiz is {{objstar.usernameM}}
+      <strong>Username</strong> of the student who submitted the quiz is {{objstar.usernameM}}
+
       <br/>
 
-      Time when the quiz was submitted is {{objstar.timeM}}
+      <strong> Time </strong> when the quiz was submitted is {{objstar.timeM}}
 
-      <p>Submission</p>
-      <div *ngFor="let ansfinal of objstar.answerM" class="list-group-item">
-        <p>Question Id is: {{ansfinal._id}}</p>
-        <p *ngIf="ansfinal.essayAnswer != null"> Essay Answer is:      {{ansfinal.essayAnswer}} </p>
-        <p *ngIf="ansfinal.multipleChoiceAnswer != null"> MultipleChoiceAnswer is: {{ansfinal.multipleChoiceAnswer}} </p>
-        <p *ngIf="ansfinal.trueFalseAnswer != null"> True False Answer is: {{ansfinal.trueFalseAnswer}} </p>
-        <p *ngIf="ansfinal.fillBlanksAnswers != null"> Fill Blanks Answer for Variable 1 is: {{ansfinal.fillBlanksAnswers.variable1}}
+      <div id="moon">
+      <h5>Submission:  </h5>
+      <div id="star" *ngFor="let ansfinal of objstar.answerM" class="list-group-item">
+        <p><strong>Question Id</strong> is: {{ansfinal._id}}</p>
+        <p *ngIf="ansfinal.essayAnswer != null"> <strong>Essay Answer</strong> is:      {{ansfinal.essayAnswer}} </p>
+        <p *ngIf="ansfinal.multipleChoiceAnswer != null"> <strong>MultipleChoiceAnswer</strong> is: {{ansfinal.multipleChoiceAnswer}} </p>
+        <p *ngIf="ansfinal.trueFalseAnswer != null"> <strong>True False Answer</strong> is: {{ansfinal.trueFalseAnswer}} </p>
+        <p *ngIf="ansfinal.fillBlanksAnswers != null"> <strong>Fill Blanks Answer</strong> for Variable 1 is: {{ansfinal.fillBlanksAnswers.variable1}}
           <br/>
-          Fill Blanks Answer for Variable 2 is: {{ansfinal.fillBlanksAnswers.variable2}}
+          <strong>Fill Blanks Answer</strong> for Variable 2 is: {{ansfinal.fillBlanksAnswers.variable2}}
 
         </p>
       </div>
+      </div>
+      <br/>
+      <br/>
+
 
     </li>
 

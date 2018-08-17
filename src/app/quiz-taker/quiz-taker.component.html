@@ -1,6 +1,7 @@
-<h2>Quiz Taker</h2>
+<div id="sun">
+<h2 align="center">Quiz Taker</h2>
 
-<h3>
+<h3 align="center">
   {{quiz.title}}
   <br/>
   <button class="btn btn-primary float-right"
@@ -25,8 +26,8 @@
       {{question.title}}
       <span class="float-right">{{question.points}}</span>
     </h4>
-    <p>{{question.description}}</p>
-    <p>{{question.questionType}}</p>
+    <h6>{{question.description}}</h6>
+    <!--<p>{{question.questionType}}</p>-->
    <div [ngSwitch]="question.questionType">
 
       <app-true-false-question
@@ -52,3 +53,4 @@
     </div>
   </li>
 </ul>
+</div>

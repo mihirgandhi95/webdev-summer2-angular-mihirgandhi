@@ -1,7 +1,7 @@
 export class WidgetServiceClient {
 
   findWidgetsForTopic(topicId) {
-    return fetch('http://localhost:8080/api/topic/' + topicId + '/widget')
+    return fetch('https://cs5610-summer2-2018-mihirg.herokuapp.com/api/topic/' + topicId + '/widget')
       .then(response => response.json());
   }
 }

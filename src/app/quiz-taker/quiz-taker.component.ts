@@ -54,7 +54,9 @@ export class QuizTakerComponent implements OnInit {
       console.log(this.submissionId);
       this.submissionNew = submission;
       console.log(this.submissionNew);
-      window.location.replace('/quiz/' + this.quiz._id + '/submission/' + this.submissionId);
+      // window.location.replace('/quiz/' + this.quiz._id + '/submission/' + this.submissionId);
+       window.location.replace('/quiz/' + quiz._id + '/submission/' + this.submissionId);
+
       console.log(submission); });
   }
 

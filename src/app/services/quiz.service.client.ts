@@ -5,7 +5,7 @@ export class QuizServiceClient {
 
 
    loadSingleSubmission(quizId, submissionId) {
-     return fetch('http://localhost:4000/api/quiz/' + quizId + '/submission/' + submissionId ,
+     return fetch('https://backendassignment5.herokuapp.com/api/quiz/' + quizId + '/submission/' + submissionId ,
        {
          method: 'get',
          credentials: 'include',
@@ -17,7 +17,7 @@ export class QuizServiceClient {
    }
 
   loadSubmission(quizId) {
-    return fetch('http://localhost:4000/api/quiz/' + quizId + '/submissions',
+    return fetch('https://backendassignment5.herokuapp.com/api/quiz/' + quizId + '/submissions',
       {
         method: 'get',
         credentials: 'include',
@@ -42,7 +42,7 @@ export class QuizServiceClient {
 
 
   submitQuiz(quiz) {
-     return fetch('http://localhost:4000/api/quiz/' + quiz._id + '/submission', {
+     return fetch('https://backendassignment5.herokuapp.com/api/quiz/' + quiz._id + '/submission', {
       method: 'post',
       body: JSON.stringify(quiz),
       credentials: 'include',
@@ -56,7 +56,7 @@ export class QuizServiceClient {
 
   createQuiz(quiz) {}
   findAllQuizzes = () =>
-    fetch('http://localhost:4000/api/quiz')
+    fetch('https://backendassignment5.herokuapp.com/api/quiz')
       .then(response => response.json())
   findQuizById = quizId =>
     fetch('http://localhost:4000/api/quiz/' + quizId)

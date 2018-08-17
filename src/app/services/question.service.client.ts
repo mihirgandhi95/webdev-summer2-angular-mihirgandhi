@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
 export class QuestionServiceClient {
 
   findQuestionById = questionId =>
-    fetch('http://localhost:4000/api/question/' + questionId)
+    fetch('https://backendassignment5.herokuapp.com/api/question/' + questionId)
       .then(response => response.json())
 
 }
